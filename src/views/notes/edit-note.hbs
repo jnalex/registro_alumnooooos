@@ -1,0 +1,87 @@
+{{#each errors}}
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{text}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+{{/each}}
+
+<div class="col-md-4 mx-auto">
+  <div class="card">
+    <div class="card-header text-center">
+      <h3>Editar alumno</h3>
+    </div>
+    <div class="card-body">
+      <form action="/notes/edit-note/{{note._id}}?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT" />
+        <div class="mb-3">
+          <label for="title">Nombre alumno:</label>
+          <input
+            type="text"
+            name="nombre_alumno"
+            class="form-control"
+            value="{{note.nombre_alumno}}"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="title">Rut:</label>
+          <input
+            type="text"
+            name="rut"
+            class="form-control"
+            value="{{note.rut}}"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="title">Edad:</label>
+          <input
+            type="text"
+            name="edad"
+            class="form-control"
+            value="{{note.edad}}"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="title">Curso:</label>
+          <input
+            type="text"
+            name="curso"
+            class="form-control"
+            value="{{note.curso}}"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="title">Ciudad:</label>
+          <input
+            type="text"
+            name="ciudad"
+            class="form-control"
+            value="{{note.ciudad}}"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="title">Sexo:</label>
+          <input
+            type="text"
+            name="sexo"
+            class="form-control"
+            value="{{note.sexo}}"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="title">Direccion:</label>
+          <input
+            type="text"
+            name="direccion"
+            class="form-control"
+            value="{{note.direccion}}"
+          />
+        </div>
+        <button class="btn btn-primary w-100" type="submit">
+          Guardar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
